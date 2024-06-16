@@ -12,10 +12,25 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 // auth and api routes
+app.use("/api/auth", require("./api/auth")); // Add auth routes
 app.use("/api", require("./api"));
 
 // static file-serving middleware
 app.use(express.static(path.join(__dirname, "..", "public")));
+
+// Serve subcategory folders statically
+app.use(
+  "/arts/airplanes",
+  express.static(path.join(__dirname, "..", "public", "arts", "airplanes"))
+);
+app.use(
+  "/arts/faces",
+  express.static(path.join(__dirname, "..", "public", "arts", "faces"))
+);
+app.use(
+  "/arts/outdoors",
+  express.static(path.join(__dirname, "..", "public", "arts", "outdoors"))
+);
 
 // sends index.html for any remaining requests
 app.use("*", (req, res) => {

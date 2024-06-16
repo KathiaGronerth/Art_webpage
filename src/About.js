@@ -10,7 +10,7 @@ const About = () => {
           <img src="about2.jpg" alt="Carl_Canga" />
         </div>
         <div className="description">
-          <p>what can I tell you?</p>
+          <p style={{ fontWeight: "bold" }}>What can I tell you?</p>
           <p>
             I was born in Missouri, and have lived in Austin, Texas since 2005.
             In the 90s I worked as a traditional special effects animator on ten

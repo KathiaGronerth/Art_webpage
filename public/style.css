@@ -1,6 +1,6 @@
 body {
-  background-color: white;
-  color: #333;
+  background-color: #362c1e;
+  color: white;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -18,17 +18,23 @@ body {
 /* Header */
 
 .header {
-  width: 600px;
+  width: 300px;
   z-index: 1;
   text-align: center;
   height: 100%;
-  margin-left: 30px;
-  margin-right: 30px;
+  position: fixed;
+  background-color: #362c1e;
+  top: 0px;
+  left: 0px;
+  overflow: scroll;
 }
 
 .header img {
-  width: 257px;
-  height: 221px;
+  /* width: 177px;
+  height: 152px; */
+  width: 152px;
+  height: 130px;
+  margin-top: 40px;
 }
 
 nav ul {
@@ -42,14 +48,14 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #333;
+  color: white;
   text-decoration: none;
-  font-size: 2.5em;
+  font-size: 1.2em;
   display: block;
   padding: 15px;
   transition: color 0.3s;
-  margin-bottom: 50px;
-  margin-top: 50px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 nav ul li:hover {
@@ -61,22 +67,24 @@ nav ul li a:hover {
   color: #666;
 }
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
 .dropdown-content {
   display: none;
   flex-direction: column;
-  /* background-color: #f5f5f5; */
   background-color: white;
   padding: 5px 10px;
   border-radius: 5%;
   position: absolute;
-  min-width: 200px;
+  width: 80px;
   z-index: 1;
-  top: 50%;
-  right: 0;
-  left: 100%;
   margin-top: 0px;
-  margin-left: 0px;
-  transform: translateY(-50%);
+  left: 100%; /* Position the dropdown to the right of the parent */
+  top: 0; /* Align the top of the dropdown with the parent */
+  transform: translateX(-10px); /* Adjust to move closer to the parent */
 }
 
 .dropdown-content li {
@@ -85,31 +93,32 @@ nav ul li a:hover {
 }
 
 .dropdown-content li a {
-  padding: 12px 16px;
+  padding: 0px 0px;
   color: #333;
-  font-size: 2.3em;
+  font-size: 1.1em;
   display: block;
 }
 
 .dropdown-content li a:hover {
-  /* background-color: #f1f1f1; */
+  background-color: #f1f1f1;
 }
 
+/* Show the dropdown content on hover */
 .dropdown:hover .dropdown-content {
-  display: block;
+  display: flex;
 }
 
 .social-links {
   display: flex;
   flex-direction: row;
-  margin-top: 20px;
+  margin-top: 40px;
   justify-content: center;
 }
 
 .social-links a {
-  color: #333;
-  font-size: 2.5em;
-  margin: 0 30px;
+  color: white;
+  font-size: 1.4em;
+  margin: 0 20px;
 }
 
 .social-links a:hover {
@@ -130,29 +139,43 @@ nav ul li a:hover {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background-color: #fff;
+  margin-left: 300px;
+  margin-right: 50px;
 }
 
 .carousel-wrapper {
   width: 100%;
+  position: relative; /* Add this line */
+}
+
+.carousel .carousel-status {
+  display: none;
 }
 
 .hero-text {
   position: absolute;
   bottom: 30px;
+  left: 15px; /* Add left positioning */
+  right: 15px; /* Add right positioning for responsiveness */
   background: rgba(255, 255, 255, 0.7);
   padding: 20px;
   border-radius: 5px;
+  color: #362c1e;
+  z-index: 1; /* Ensure it stays above the image */
 }
 
 .hero-text h1 {
   margin: 0;
-  font-size: 1.5em;
+  font-size: 15px;
 }
 
 .hero-text p {
   margin: 5px 0 0;
-  font-size: 1em;
+  font-size: 14px;
+}
+
+.carousel .slide {
+  position: relative; /* Ensure this is set */
 }
 
 .carousel .slide img {
@@ -167,7 +190,7 @@ nav ul li a:hover {
   transform: translateY(-50%);
   background: none;
   border: none;
-  font-size: 4.5em;
+  font-size: 2em;
   cursor: pointer;
   /* color: #333; */
   z-index: 2;
@@ -193,19 +216,20 @@ nav ul li a:hover {
 /* About */
 
 .about {
-  display: flex;
-  flex-direction: column;
   width: 80%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  margin-left: 300px;
+  margin-right: 50px;
+  display: block;
 }
 
 .about p {
   text-decoration: none;
-  color: #333;
-  font-size: 3.5em;
+  color: white;
+  font-size: 1.4em;
   font-family: Arial, sans-serif;
 }
 
@@ -213,12 +237,13 @@ nav ul li a:hover {
   display: flex;
   flex-direction: row;
   margin: 20px;
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .content p {
   text-decoration: none;
-  color: #333;
-  font-size: 2.5em;
+  color: #362c1e;
+  font-size: 1em;
   font-family: Arial, sans-serif;
   text-align: justify;
   margin-left: 50px;
@@ -231,8 +256,8 @@ nav ul li a:hover {
 }
 
 .images img {
-  width: 600px;
-  height: 400px;
+  width: 300px;
+  height: 200px;
   margin: 20px;
 }
 
@@ -241,41 +266,63 @@ nav ul li a:hover {
 .container-category {
   display: flex;
   flex-direction: column;
-  background-color: white;
   color: black;
+  margin-left: 430px;
+  align-items: center;
 }
 
 .container-category p {
   text-decoration: none;
-  color: #333;
-  font-size: 3.5em;
+  color: white;
+  font-size: 1.4em;
   font-family: Arial, sans-serif;
-  margin-left: 30px;
+  text-align: center;
 }
 
 .works {
-  /* display: grid; */
-  display: flex;
-  flex-wrap: wrap;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    1fr
+  ); /* Create a flexible grid with 3 columns */
+  gap: 10px; /* Adjust gap between items */
   padding: 20px;
   margin-top: 30px;
-  margin-left: 30px;
-  margin-right: 30px;
+  margin-right: 0px;
+  background: rgba(255, 255, 255, 0.7);
+  width: 80%;
+  height: 80%;
 }
 
 .work-item {
   position: relative;
-  width: 300px;
-  height: 300px;
+  overflow: hidden;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-item.large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.work-item.medium {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.work-item.small {
+  grid-column: span 1;
+  grid-row: span 1;
 }
 
 .work-item img {
-  display: block;
-  border-radius: 8px;
   width: 100%;
   height: 100%;
+  border-radius: 8px;
+  object-fit: cover; /* Ensures the image covers the container without distortion */
 }
 
 .work-overlay {
@@ -291,7 +338,7 @@ nav ul li a:hover {
   justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
-  border-radius: 8px;
+  /* Removed border-radius to match image size */
 }
 
 .work-item:hover .work-overlay {
@@ -305,7 +352,7 @@ nav ul li a:hover {
 .work-details p {
   margin: 5px 0 0;
   color: white;
-  font-size: medium;
+  font-size: small;
 }
 
 /* Painting */
@@ -317,6 +364,7 @@ html,
   padding: 0;
   height: 100%;
   width: 100%;
+  /* overflow: hidden; Prevent scrolling */
   /* background-color: black; */
 }
 
@@ -329,17 +377,50 @@ html,
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between; /* Distribute space between header, image, and footer */
   background-color: black;
   color: white;
+  overflow: hidden;
+  position: fixed;
 }
 
-.painting-index {
+.header-controls,
+.footer-controls {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  z-index: 1000; /* Ensure it stays on top */
+  position: absolute; /* Fix position */
+}
+
+.header-controls {
+  top: 0;
+  height: 20px;
+}
+
+.footer-controls {
+  bottom: 0;
+}
+
+.header-controls .zoom-controls {
   position: absolute;
   top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+.header-controls .painting-index {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 18px;
-  margin-top: 50px;
-  font-size: 25px;
+  z-index: 1000; /* Ensure it stays on top */
+  font-size: 15px;
 }
 
 .painting-navigation {
@@ -352,6 +433,7 @@ html,
   transform: translateY(-50%);
   font-size: 24px;
   color: white;
+  z-index: 1000; /* Ensure it stays on top */
 }
 
 .painting-navigation .nav-left {
@@ -368,37 +450,24 @@ html,
   padding: 10px;
 }
 
-.zoom-controls {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  gap: 10px;
-  margin-top: 50px;
-  margin-right: 30px;
-}
-
-.zoom-icon {
-  cursor: pointer;
-  color: white;
-  font-size: 24px;
-}
-
 .painting-image {
   max-width: 80%;
   max-height: 80%;
   height: auto;
-  border: 1px solid #ccc;
-  margin-bottom: 20px;
+  border: 1px solid black;
+  z-index: 500; /* Ensure it is behind controls */
+  object-fit: contain; /* Ensure image fits within its container */
+  margin-top: 40px;
 }
 
 .painting-details {
   text-align: center;
   color: white;
+  z-index: 1000; /* Ensure it stays on top */
 }
 
 .painting-details p {
-  font-size: 16px;
+  font-size: 12px;
   margin: 0;
   padding: 0;
 }
@@ -417,46 +486,68 @@ html,
 /* Contact */
 
 .contact-container {
+  /* width: 80%; */
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  height: 100%;
-  padding: 20px;
-  background-color: white; /* Ensure form background is white */
-  color: black;
+  margin-left: 300px;
+  margin-right: 50px;
+  width: 80%;
+  /* display: block; */
+  /* position: fixed; */
 }
 
 .contact-container p {
   text-decoration: none;
-  color: #333;
-  font-size: 3.5em;
+  color: white;
+  font-size: 1.4em;
   font-family: Arial, sans-serif;
 }
+
+/* .contact-square {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  background: rgba(255, 255, 255, 0.7);
+  width: 700px;
+  margin-left: 200px;
+} */
 
 .contact-square {
   display: flex;
   flex-direction: row;
-  margin-top: 50px;
+  background: rgba(255, 255, 255, 0.7);
+  padding-bottom: 32px;
+  padding-top: 25px;
+  margin-right: 100px;
+  margin-bottom: 100px;
 }
 
 .contact-info {
   text-align: left;
   margin-bottom: 20px;
+  margin-left: 100px;
+  margin-top: 50px;
 }
 
 .contact-info p {
   margin: 5px 0;
-  font-size: 2em;
+  font-size: 1em;
   margin-bottom: 30px;
+  color: #362c1e;
 }
 
 .contact-form {
-  width: 100%;
-  min-width: 600px;
+  /* width: 100%; */
+  width: 500px;
   display: flex;
   flex-direction: column;
   margin-left: 100px;
+  padding-top: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  font-size: 15px;
 }
 
 .contact-form input,
@@ -464,23 +555,231 @@ html,
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid #00aaff; /* Adjust border color */
+  border: 1px solid #cead35; /* Adjust border color */
   border-radius: 4px;
   box-sizing: border-box;
-  font-size: 2em;
+  font-size: 1em;
 }
 
 .contact-form button {
   padding: 10px;
   border: none;
-  background-color: #00aaff; /* Adjust button background color */
-  color: white;
-  font-size: 16px;
+  background-color: #cead35;
+  color: #362c1e;
+  font-size: 1em;
   cursor: pointer;
   border-radius: 4px;
-  font-size: 2em;
+  font-size: 1em;
 }
 
 .contact-form button:hover {
-  background-color: #0088cc; /* Adjust button hover background color */
+  background-color: #a78b28;
+}
+
+/* Footer */
+/* .footer {
+  color: #ffffff; 
+  text-align: center; 
+  padding: 20px 0; 
+  margin-bottom: 20px;
+  margin-left: 600px;
+  position: fixed;
+  margin-top: 580px;
+} */
+
+.footer {
+  /* color: #ffffff;
+  text-align: center;
+  padding: 3px;
+  height: 50px;
+  display: block;
+  font-size: 12px;
+  align-items: center; */
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  z-index: 1000; /* Ensure it stays on top */
+  bottom: 0;
+  font-size: 12px;
+  margin-left: 150px;
+}
+
+/* AdminPage */
+
+.admin-container {
+  padding: 20px;
+  width: 800px;
+  margin: 0 auto;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+  color: #333;
+}
+
+.admin-form,
+.admin-edit-form,
+.env-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.admin-edit-form {
+  margin-top: 20px;
+}
+
+.admin-form input,
+.admin-form textarea,
+.admin-form select,
+.admin-edit-form input,
+.admin-edit-form textarea,
+.admin-edit-form select,
+.env-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #6b6a6a;
+}
+
+.admin-form button,
+.admin-edit-form button,
+.env-form button {
+  padding: 10px;
+  background-color: #cead35;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.admin-form button:hover,
+.admin-edit-form button:hover,
+.env-form button:hover {
+  background-color: #a78b28;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(100px, 1fr)
+  ); /* Adjusted for smaller images */
+  gap: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.image-thumbnail {
+  width: 100px; /* Set specific width for thumbnails */
+  height: auto;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: transform 0.2s;
+}
+
+.image-thumbnail:hover {
+  transform: scale(1.05);
+}
+
+.image-preview {
+  width: 200px;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.homepage-button {
+  display: block;
+  margin: 10px auto 20px;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.homepage-button:hover {
+  background-color: #218838;
+}
+
+/* Login */
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  background-color: #f5f5f5;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.login-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.login-form button {
+  padding: 10px;
+  background-color: #cead35;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: #a78b28;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+.login-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.login-links button {
+  padding: 5px 10px;
+  background-color: #cead35;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.login-links button:hover {
+  background-color: #a78b28;
 }

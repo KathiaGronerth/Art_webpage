@@ -35,8 +35,8 @@ const Homepage = () => {
           )
         }
       >
-        <div>
-          <img src="/arts/airplanes/art1.jpg" alt="Slide 1" />
+        <div style={{ position: "relative" }}>
+          <img src="/arts/airplanes/airplanes1.jpg" alt="Slide 1" />
           <div className="hero-text">
             <h1>The Submarine</h1>
             <p>
@@ -46,8 +46,8 @@ const Homepage = () => {
             </p>
           </div>
         </div>
-        <div>
-          <img src="/arts/airplanes/art2.jpg" alt="Slide 2" />
+        <div style={{ position: "relative" }}>
+          <img src="/arts/airplanes/airplanes2.jpg" alt="Slide 2" />
           <div className="hero-text">
             <h1>The Military Airplane</h1>
             <p>
@@ -56,8 +56,8 @@ const Homepage = () => {
             </p>
           </div>
         </div>
-        <div>
-          <img src="/arts/airplanes/art3.jpg" alt="Slide 3" />
+        <div style={{ position: "relative" }}>
+          <img src="/arts/airplanes/airplanes3.jpg" alt="Slide 3" />
           <div className="hero-text">
             <h1>Early 20th Century Biplane</h1>
             <p>

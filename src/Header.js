@@ -36,21 +36,21 @@ const Header = () => {
       </nav>
       <div className="social-links">
         <a
-          href="https://www.facebook.com"
+          href="https://www.facebook.com/carl.canga"
           target="_blank"
           rel="noopener noreferrer"
         >
           <i className="fab fa-facebook"></i>
         </a>
         <a
-          href="https://www.instagram.com"
+          href="https://www.instagram.com/carlcanga/"
           target="_blank"
           rel="noopener noreferrer"
         >
           <i className="fab fa-instagram"></i>
         </a>
 
-        <a href="#email">
+        <a href="/contact">
           <i className="fa fa-envelope"></i>
         </a>
       </div>

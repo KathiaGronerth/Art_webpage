@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,10 +16,22 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form submitted:", formData);
+    // Clear the form data immediately upon submission
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      comments: "",
+    });
+
+    try {
+      const response = await axios.post("/api/contact", formData);
+      console.log("Email sent:", response.data);
+    } catch (error) {
+      console.error("Error sending email:", error);
+    }
   };
 
   return (
@@ -27,7 +40,7 @@ const Contact = () => {
       <div className="contact-square">
         <div className="contact-info">
           <p>Carl Canga Art</p>
-          <p>cangac@hotmail.com</p>
+          <p>carl.canga@outlook.com</p>
         </div>
         <form className="contact-form" onSubmit={handleSubmit}>
           <input

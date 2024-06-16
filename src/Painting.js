@@ -86,9 +86,6 @@ const Painting = () => {
 
   return (
     <div className="painting-container">
-      <div className="painting-index">
-        {currentIndex} / {subcategoryPaintings.length}
-      </div>
       <div className="painting-navigation">
         <span onClick={handlePrevious} className="nav-left">
           &#8592;
@@ -97,10 +94,15 @@ const Painting = () => {
           &#8594;
         </span>
       </div>
-      <div className="zoom-controls">
-        <FaSearchMinus onClick={handleZoomOut} className="zoom-icon" />
-        <FaSearchPlus onClick={handleZoomIn} className="zoom-icon" />
-        <FaTimes onClick={handleClose} className="zoom-icon" />
+      <div class="header-controls">
+        <div className="painting-index">
+          {currentIndex} / {subcategoryPaintings.length}
+        </div>
+        <div className="zoom-controls">
+          <FaSearchMinus onClick={handleZoomOut} className="zoom-icon" />
+          <FaSearchPlus onClick={handleZoomIn} className="zoom-icon" />
+          <FaTimes onClick={handleClose} className="zoom-icon" />
+        </div>
       </div>
       <img
         src={painting.imageUrl}
@@ -108,12 +110,13 @@ const Painting = () => {
         className="painting-image"
         style={{ transform: `scale(${zoomLevel})` }}
       />
-      <div className="painting-details">
-        <p>
-          {painting.title} - {painting.technique} - Paper - {painting.size} -{" "}
-          {painting.status}
-        </p>
-        {/* <a href="#">More Info</a> */}
+      <div class="footer-controls">
+        <div className="painting-details">
+          <p>
+            {painting.title} - {painting.technique} - {painting.description}
+          </p>
+          {/* <a href="#">More Info</a> */}
+        </div>
       </div>
     </div>
   );
