@@ -6,7 +6,7 @@ const LoginPage = ({ setIsAuthenticated }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [isRegistering, setIsRegistering] = useState(false);
+  // const [isRegistering, setIsRegistering] = useState(false);
   const [isUpdatingPassword, setIsUpdatingPassword] = useState(false);
   const [newPassword, setNewPassword] = useState("");
   const navigate = useNavigate();
@@ -24,16 +24,16 @@ const LoginPage = ({ setIsAuthenticated }) => {
     }
   };
 
-  const handleRegister = async (e) => {
-    e.preventDefault();
-    try {
-      await axios.post("/api/auth/register", { email, password });
-      setError("Registration successful. You can now log in.");
-      setIsRegistering(false);
-    } catch (error) {
-      setError("Registration failed");
-    }
-  };
+  // const handleRegister = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     await axios.post("/api/auth/register", { email, password });
+  //     setError("Registration successful. You can now log in.");
+  //     setIsRegistering(false);
+  //   } catch (error) {
+  //     setError("Registration failed");
+  //   }
+  // };
 
   const handleUpdatePassword = async (e) => {
     e.preventDefault();
@@ -48,14 +48,8 @@ const LoginPage = ({ setIsAuthenticated }) => {
 
   return (
     <div className="login-container">
-      <h1>
-        {isRegistering
-          ? "Register"
-          : isUpdatingPassword
-          ? "Update Password"
-          : "Login"}
-      </h1>
-      {!isRegistering && !isUpdatingPassword && (
+      <h1>{isUpdatingPassword ? "Update Password" : "Login"}</h1>
+      {!isUpdatingPassword && (
         <form onSubmit={handleLogin} className="login-form">
           <input
             type="email"
@@ -77,7 +71,7 @@ const LoginPage = ({ setIsAuthenticated }) => {
         </form>
       )}
 
-      {isRegistering && (
+      {/* {isRegistering && (
         <form onSubmit={handleRegister} className="login-form">
           <input
             type="email"
@@ -97,7 +91,7 @@ const LoginPage = ({ setIsAuthenticated }) => {
           />
           <button type="submit">Register</button>
         </form>
-      )}
+      )} */}
 
       {isUpdatingPassword && (
         <form onSubmit={handleUpdatePassword} className="login-form">
@@ -123,20 +117,20 @@ const LoginPage = ({ setIsAuthenticated }) => {
 
       {error && <p className="error">{error}</p>}
 
-      {!isRegistering && !isUpdatingPassword && (
+      {!isUpdatingPassword && (
         <div className="login-links">
-          <button onClick={() => setIsRegistering(true)}>Register</button>
+          {/* <button onClick={() => setIsRegistering(true)}>Register</button> */}
           <button onClick={() => setIsUpdatingPassword(true)}>
             Update Password
           </button>
         </div>
       )}
 
-      {(isRegistering || isUpdatingPassword) && (
+      {isUpdatingPassword && (
         <div className="login-links">
           <button
             onClick={() => {
-              setIsRegistering(false);
+              // setIsRegistering(false);
               setIsUpdatingPassword(false);
             }}
           >
