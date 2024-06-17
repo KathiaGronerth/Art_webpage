@@ -26,6 +26,8 @@ router.post("/", async (req, res, next) => {
       return res.status(500).send("Email settings not configured");
     }
 
+    console.log("Email Settings:", settings.email, settings.password);
+
     const transporter = nodemailer.createTransport({
       host: "smtp-mail.outlook.com",
       port: 587,
@@ -46,6 +48,15 @@ router.post("/", async (req, res, next) => {
     await transporter.sendMail(mailOptions);
     res.status(200).send("Email sent successfully");
   } catch (error) {
+    if (error.response && error.response.status === 535) {
+      console.error("Authentication Error:", error.response.data);
+      res
+        .status(500)
+        .send("Authentication Error: Check your email credentials");
+    } else {
+      console.error("Error sending email:", error);
+      res.status(500).send("Error sending email");
+    }
     next(error);
   }
 });
