@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 const db = require("../db");
 
-const Emailsetting = db.define("emailsetting", {
+const Mail = db.define("mail", {
   email: {
     type: Sequelize.STRING,
     allowNull: false,
@@ -12,4 +12,4 @@ const Emailsetting = db.define("emailsetting", {
   },
 });
 
-module.exports = Emailsetting;
+module.exports = Mail;

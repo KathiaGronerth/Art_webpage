@@ -1,10 +1,10 @@
 const router = require("express").Router();
 const { models } = require("../db/models");
-const { Emailsetting } = models;
+const { Mail } = models;
 
 router.get("/", async (req, res, next) => {
   try {
-    const settings = await Emailsetting.findOne();
+    const settings = await Mail.findOne();
     if (settings) {
       res.status(200).json(settings);
     } else {
@@ -18,11 +18,11 @@ router.get("/", async (req, res, next) => {
 router.post("/", async (req, res, next) => {
   const { email, password } = req.body;
   try {
-    const settings = await Emailsetting.findOne();
+    const settings = await Mail.findOne();
     if (settings) {
       await settings.update({ email, password });
     } else {
-      await Emailsetting.create({ email, password });
+      await Mail.create({ email, password });
     }
     res.status(200).send("Email settings updated successfully");
   } catch (error) {

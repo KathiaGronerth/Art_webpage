@@ -184,7 +184,7 @@ const AdminPage = () => {
   const handleEnvSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/api/emailsettings", envData);
+      await axios.post("/api/mails", envData);
       setEnvData({ email: "", password: "" });
     } catch (error) {
       console.error("Error updating environment variables:", error);

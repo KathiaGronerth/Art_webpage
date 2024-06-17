@@ -2,7 +2,7 @@
 require("dotenv").config();
 const {
   db,
-  models: { Product, User, Emailsetting },
+  models: { Product, User, Mail },
 } = require("../server/db/models");
 
 const products = [
@@ -168,7 +168,7 @@ const seed = async () => {
       isAdmin: true,
     });
     // Create initial email settings
-    await Emailsetting.create({
+    await Mail.create({
       email: process.env.OUTLOOK_EMAIL,
       password: process.env.OUTLOOK_PASSWORD,
     });
