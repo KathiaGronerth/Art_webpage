@@ -1,12 +1,12 @@
 const db = require("../db");
 const Product = require("./Product");
 const User = require("./User");
-const Emailsetting = require("./Emailsetting_");
+const Mail = require("./Mail");
 
 const models = {
   Product,
   User,
-  Emailsetting,
+  Mail,
 };
 
 module.exports = { db, models };
