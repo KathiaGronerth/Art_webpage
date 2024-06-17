@@ -5,6 +5,7 @@ router.use("/products", require("./products"));
 router.use("/contact", require("./contact"));
 router.use("/upload", require("./upload"));
 router.use("/update-env", require("./update-env"));
+router.use("/emailsettings", require("./emailsettings"));
 
 require("dotenv").config();
 console.log("OUTLOOK_EMAIL:", process.env.OUTLOOK_EMAIL);

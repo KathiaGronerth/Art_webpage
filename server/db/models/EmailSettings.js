@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 const db = require("../db");
 
-const EmailSettings = db.define("emailSettings", {
+const EmailSettings = db.define("emailsettings", {
   email: {
     type: Sequelize.STRING,
     allowNull: false,
