@@ -11,7 +11,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
@@ -55,5 +55,5 @@ module.exports = {
       index: "/index.html",
     }, // This option ensures that all routes are served to the React app
   },
-  mode: "development", // Change to 'production' for production builds
+  mode: "production", // Change to 'production' for production builds
 };
