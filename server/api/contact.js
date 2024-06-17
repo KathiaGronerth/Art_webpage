@@ -2,13 +2,13 @@ const express = require("express");
 const router = express.Router();
 const nodemailer = require("nodemailer");
 const { models } = require("../db/models");
-const { EmailSetting } = models;
+const { Emailsetting } = models;
 
 router.post("/", async (req, res, next) => {
   const { name, email, phone, comments } = req.body;
 
   try {
-    const settings = await EmailSetting.findOne();
+    const settings = await Emailsetting.findOne();
     if (!settings) {
       return res.status(500).send("Email settings not configured");
     }
