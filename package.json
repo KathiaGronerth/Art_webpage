@@ -26,10 +26,11 @@
   },
   "scripts": {
     "seed": "node script/seed.js",
-    "start": "concurrently \"node server/index.js\" \"webpack serve --open\"",
+    "start": "node server/index.js",
     "build": "webpack",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "webpack"
   },
   "eslintConfig": {
     "extends": [
