@@ -1,14 +1,13 @@
-const db = new Sequelize(
-  process.env.DATABASE_URL || "postgres://localhost:5432/carlpage",
-  {
-    logging: false,
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false, // Allow self-signed certificates
-      },
+const Sequelize = require("sequelize");
+
+const db = new Sequelize(process.env.DATABASE_URL, {
+  logging: false,
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false, // Allow self-signed certificates
     },
-  }
-);
+  },
+});
 
 module.exports = db;
