@@ -1,15 +1,15 @@
 const router = require("express").Router();
 const { models } = require("../db/models");
-const { EmailSettings } = models;
+const { EmailSetting } = models;
 
 router.post("/", async (req, res, next) => {
   const { email, password } = req.body;
   try {
-    const settings = await EmailSettings.findOne();
+    const settings = await EmailSetting.findOne();
     if (settings) {
       await settings.update({ email, password });
     } else {
-      await EmailSettings.create({ email, password });
+      await EmailSetting.create({ email, password });
     }
     res.status(200).send("Email settings updated successfully");
   } catch (error) {
