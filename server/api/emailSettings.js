@@ -1,6 +1,6 @@
-const router = require("express").Router();
-const { models } = require("../db/models");
-const { EmailSetting } = models;
+const express = require("express");
+const router = express.Router();
+const { EmailSetting } = require("../db/models");
 
 router.post("/", async (req, res, next) => {
   const { email, password } = req.body;
