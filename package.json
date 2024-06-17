@@ -22,7 +22,7 @@
     "react-scripts": "5.0.1",
     "sequelize": "^6.37.3",
     "web-vitals": "^2.1.4",
-    "concurrently": "^8.2.2" 
+    "concurrently": "^8.2.2"
   },
   "scripts": {
     "seed": "node script/seed.js",

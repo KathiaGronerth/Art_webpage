@@ -11,30 +11,17 @@ app.use(morgan("dev"));
 // body parsing middleware
 app.use(express.json());
 
+// Serve static files
+app.use(express.static(path.join(__dirname, "public")));
+app.use("/arts", express.static(path.join(__dirname, "public", "arts")));
+
 // auth and api routes
 app.use("/api/auth", require("./api/auth")); // Add auth routes
 app.use("/api", require("./api"));
 
-// static file-serving middleware for the React app
-app.use(express.static(path.join(__dirname, "..", "dist")));
-
-// Serve subcategory folders statically (if needed)
-app.use(
-  "/arts/airplanes",
-  express.static(path.join(__dirname, "..", "dist", "arts", "airplanes"))
-);
-app.use(
-  "/arts/faces",
-  express.static(path.join(__dirname, "..", "dist", "arts", "faces"))
-);
-app.use(
-  "/arts/outdoors",
-  express.static(path.join(__dirname, "..", "dist", "arts", "outdoors"))
-);
-
 // sends index.html for any remaining requests (non-API routes)
 app.use("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "dist", "index.html"));
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 // any remaining requests with an extension (.js, .css, etc.) send 404
