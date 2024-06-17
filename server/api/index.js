@@ -10,6 +10,7 @@ router.use("/emailsettings", require("./emailsettings"));
 require("dotenv").config();
 console.log("OUTLOOK_EMAIL:", process.env.OUTLOOK_EMAIL);
 console.log("OUTLOOK_PASSWORD:", process.env.OUTLOOK_PASSWORD);
+
 const morgan = require("morgan");
 const path = require("path");
 
