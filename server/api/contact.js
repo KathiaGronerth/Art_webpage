@@ -18,7 +18,7 @@ router.post("/", async (req, res, next) => {
 
   const mailOptions = {
     from: process.env.OUTLOOK_EMAIL,
-    to: "kathia.villavicencio@outlook.com",
+    to: process.env.OUTLOOK_EMAIL,
     subject: "Contact Form Submission",
     text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nComments: ${comments}`,
   };
