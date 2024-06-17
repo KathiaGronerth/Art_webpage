@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: "./src/index.js", // Your entry point file
   output: {
-    path: path.resolve(__dirname, "public"), // Output directory
+    path: path.resolve(__dirname, "dist"), // Output directory
     filename: "bundle.js", // Output bundle file
     publicPath: "/", // Ensure all paths are served from the root
   },
@@ -55,5 +55,5 @@ module.exports = {
       index: "/index.html",
     }, // This option ensures that all routes are served to the React app
   },
-  mode: "production", // Change to 'production' for production builds
+  mode: process.env.NODE_ENV || "development", // Change to 'production' for production builds
 };

@@ -1,6 +1,19 @@
-const express = require("express");
-const router = express.Router();
-const { EmailSetting } = require("../db/models");
+const router = require("express").Router();
+const { models } = require("../db/models");
+const { EmailSetting } = models;
+
+router.get("/", async (req, res, next) => {
+  try {
+    const settings = await EmailSetting.findOne();
+    if (settings) {
+      res.status(200).json(settings);
+    } else {
+      res.status(404).send("Email settings not found");
+    }
+  } catch (error) {
+    next(error);
+  }
+});
 
 router.post("/", async (req, res, next) => {
   const { email, password } = req.body;

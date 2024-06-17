@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const nodemailer = require("nodemailer");
-const { EmailSetting } = require("../db/models");
+const { models } = require("../db/models");
+const { EmailSetting } = models;
 
 router.post("/", async (req, res, next) => {
   const { name, email, phone, comments } = req.body;
