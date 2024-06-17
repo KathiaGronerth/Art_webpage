@@ -26,6 +26,8 @@ router.post("/", async (req, res, next) => {
     }
     res.status(200).send("Email settings updated successfully");
   } catch (error) {
+    console.error("Error updating email settings:", error);
+    res.status(500).send("Failed to update email settings");
     next(error);
   }
 });
