@@ -46,7 +46,7 @@ module.exports = {
     proxy: [
       {
         context: ["/api"],
-        target: "http://localhost:3500", // Forward API requests to the API server
+        target: "http://localhost:3000", // Forward API requests to the API server
         secure: false,
         changeOrigin: true,
       },

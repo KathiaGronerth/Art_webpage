@@ -1,5 +1,5 @@
 const { db } = require("./db/models");
-const PORT = process.env.PORT || 3500;
+const PORT = process.env.PORT || 3000;
 const app = require("./app");
 const seed = require("../script/seed"); // Ensure the correct path to seed.js
 
