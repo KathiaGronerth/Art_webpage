@@ -2,7 +2,7 @@
 require("dotenv").config();
 const {
   db,
-  models: { Product, User },
+  models: { Product, User, EmailSettings },
 } = require("../server/db/models");
 
 const products = [
@@ -166,6 +166,11 @@ const seed = async () => {
       email: "carl.canga@outlook.com",
       password: "Rocketman1!", // In a real application, hash the password before storing
       isAdmin: true,
+    });
+    // Create initial email settings
+    await EmailSettings.create({
+      email: process.env.OUTLOOK_EMAIL,
+      password: process.env.OUTLOOK_PASSWORD,
     });
     console.log("Seeding success!");
   } catch (err) {
