@@ -10,10 +10,11 @@ const init = async () => {
       await seed();
     }
     await db.sync();
+    // Start listening on the specified port
     app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
   } catch (ex) {
     console.error(ex);
-    process.exit(1);
+    process.exit(1); // Exit the process with a failure code
   }
 };
 
