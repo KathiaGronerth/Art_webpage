@@ -31,7 +31,7 @@
     "build": "webpack",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "heroku-postbuild": "webpack",
+    "heroku-postbuild": "webpack --mode production",
     "dev": "concurrently \"nodemon server/index.js\" \"webpack serve --config webpack.config.js --mode development\""
   },
   "eslintConfig": {
