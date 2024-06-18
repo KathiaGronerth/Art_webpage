@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../public/logo.jpg";
+import favicon from "../public/favicon.jpg";
 
 const Header = () => {
   return (
     <div className="header">
-      <img src={logo} alt="Carl_Canga" />
+      <img src={favicon} alt="Carl_Canga" />
       <nav>
         <ul>
           <li>
