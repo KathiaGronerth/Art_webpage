@@ -56,5 +56,5 @@ module.exports = {
     }, // This option ensures that all routes are served to the React app
   },
   // Change to 'production' for production builds
-  mode: process.env.NODE_ENV || "development",
+  mode: process.env.NODE_ENV || "production",
 };
