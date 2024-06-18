@@ -5,7 +5,7 @@ const { models } = require("../db/models");
 const { Mail } = models;
 
 // GET route to retrieve current email settings
-router.get("/settings", async (req, res, next) => {
+router.get("/", async (req, res, next) => {
   try {
     const settings = await Mail.findOne();
     if (!settings) {
@@ -17,7 +17,7 @@ router.get("/settings", async (req, res, next) => {
   }
 });
 
-router.post("/settings", async (req, res, next) => {
+router.post("/", async (req, res, next) => {
   const { name, email, phone, comments } = req.body;
 
   try {
