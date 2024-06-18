@@ -12,7 +12,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 // Serve static files from the 'public' directory
-app.use(express.static(path.join(__dirname, "..", "public")));
+app.use(express.static(path.join(__dirname, "..", "dist")));
 app.use("/arts", express.static(path.join(__dirname, "..", "public", "arts")));
 
 // auth and api routes
@@ -21,7 +21,7 @@ app.use("/api", require("./api"));
 
 // sends index.html for any remaining requests (non-API routes)
 app.use("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "public", "index.html"));
+  res.sendFile(path.join(__dirname, "..", "dist", "index.html"));
 });
 
 // any remaining requests with an extension (.js, .css, etc.) send 404
