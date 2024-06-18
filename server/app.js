@@ -21,7 +21,7 @@ app.use("/api", require("./api"));
 
 // sends index.html for any remaining requests (non-API routes)
 app.use("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "dist", "index.html"));
+  res.sendFile(path.join(__dirname, "..", "public", "index.html"));
 });
 
 // any remaining requests with an extension (.js, .css, etc.) send 404
