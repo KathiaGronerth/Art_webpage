@@ -51,9 +51,7 @@ module.exports = {
         changeOrigin: true,
       },
     ],
-    historyApiFallback: {
-      index: "/index.html",
-    }, // This option ensures that all routes are served to the React app
+    historyApiFallback: true,
   },
   // Change to 'production' for production builds
   mode: process.env.NODE_ENV,
