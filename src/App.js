@@ -1,8 +1,13 @@
 import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 import AppContent from "./AppContent";
 
 const App = () => {
-  return <AppContent />;
+  return (
+    <Router>
+      <AppContent />
+    </Router>
+  );
 };
 
 export default App;

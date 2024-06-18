@@ -15,12 +15,12 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "..", "public")));
 app.use("/arts", express.static(path.join(__dirname, "..", "public", "arts")));
 
+// Serve static files from the 'dist' directory (React build)
+app.use(express.static(path.join(__dirname, "..", "dist")));
+
 // auth and api routes
 app.use("/api/auth", require("./api/auth")); // Add auth routes
 app.use("/api", require("./api"));
-
-// Serve static files from the 'dist' directory (React build)
-app.use(express.static(path.join(__dirname, "..", "dist")));
 
 // sends index.html for any remaining requests (non-API routes)
 app.use((req, res) => {
