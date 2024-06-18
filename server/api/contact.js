@@ -17,7 +17,7 @@ router.get("/settings", async (req, res, next) => {
   }
 });
 
-router.post("/", async (req, res, next) => {
+router.post("/settings", async (req, res, next) => {
   const { name, email, phone, comments } = req.body;
 
   try {
