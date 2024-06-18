@@ -12,7 +12,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 // Serve static files from the 'public' directory
-app.use(express.static(path.join(__dirname, "..", "public")));
+app.use(express.static(path.join(__dirname, "..", "dist")));
 app.use("/arts", express.static(path.join(__dirname, "..", "public", "arts")));
 
 // auth and api routes
