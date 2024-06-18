@@ -12,16 +12,19 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 // Serve static files from the 'public' directory
-app.use(express.static(path.join(__dirname, "..", "dist")));
+app.use(express.static(path.join(__dirname, "..", "public")));
 app.use("/arts", express.static(path.join(__dirname, "..", "public", "arts")));
 
 // auth and api routes
 app.use("/api/auth", require("./api/auth")); // Add auth routes
 app.use("/api", require("./api"));
 
+// Serve static files from the 'dist' directory (React build)
+app.use(express.static(path.join(__dirname, "..", "dist")));
+
 // sends index.html for any remaining requests (non-API routes)
-app.use("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "public", "index.html"));
+app.use((req, res) => {
+  res.sendFile(path.join(__dirname, "..", "dist", "index.html"));
 });
 
 // any remaining requests with an extension (.js, .css, etc.) send 404
