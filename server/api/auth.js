@@ -1,49 +1,35 @@
-const router = require("express").Router();
-const {
-  models: { User },
-} = require("../db/models");
+const express = require("express");
+const router = express.Router();
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const { models } = require("../db/models");
+const { User } = models;
 
-// Login route
-router.post("/login", async (req, res, next) => {
-  try {
-    const { email, password } = req.body;
-    const user = await User.findOne({ where: { email } });
-    if (user && user.password === password) {
-      // In a real application, use bcrypt to compare hashed passwords
-      res.json({ success: true });
-    } else {
-      res.json({ success: false });
-    }
-  } catch (error) {
-    next(error);
+// User login
+router.post("/login", async (req, res) => {
+  console.log("Request Body:", req.body); // Log the request body
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+    return res.status(400).send("Email and password are required");
   }
-});
 
-// Register route
-router.post("/register", async (req, res, next) => {
   try {
-    const { email, password } = req.body;
-    const user = await User.create({ email, password }); // In a real application, hash the password before storing
-    res.json({ success: true, user });
-  } catch (error) {
-    next(error);
-  }
-});
-
-// Update password route
-router.post("/update-password", async (req, res, next) => {
-  try {
-    const { email, newPassword } = req.body;
     const user = await User.findOne({ where: { email } });
-    if (user) {
-      user.password = newPassword; // In a real application, hash the new password before storing
-      await user.save();
-      res.json({ success: true });
-    } else {
-      res.json({ success: false });
-    }
-  } catch (error) {
-    next(error);
+    if (!user) return res.status(400).send("Email or password is wrong");
+
+    const validPass = await bcrypt.compare(password, user.password);
+    console.log("Password comparison result:", validPass);
+    if (!validPass) return res.status(400).send("Invalid password");
+
+    const token = jwt.sign(
+      { id: user.id, isAdmin: user.isAdmin },
+      process.env.TOKEN_SECRET
+    );
+    res.header("authorization", token).send({ token });
+  } catch (err) {
+    console.error("Server error:", err); // Debugging line
+    res.status(500).send("Internal Server Error");
   }
 });
 

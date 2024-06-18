@@ -55,5 +55,6 @@ module.exports = {
       index: "/index.html",
     }, // This option ensures that all routes are served to the React app
   },
-  mode: process.env.NODE_ENV || "development", // Change to 'production' for production builds
+  // Change to 'production' for production builds
+  mode: process.env.NODE_ENV || "development",
 };

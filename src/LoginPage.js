@@ -13,13 +13,26 @@ const LoginPage = ({ setIsAuthenticated }) => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post("/api/auth/login", { email, password });
-      const { isAdmin } = response.data;
+    console.log("Email:", email); // Debugging line
+    console.log("Password:", password); // Debugging line
 
-      setIsAuthenticated(true, isAdmin);
+    try {
+      const response = await axios.post(
+        "/api/auth/login",
+        { email, password },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      const { token } = response.data;
+
+      localStorage.setItem("authToken", token);
+      setIsAuthenticated(true);
       navigate("/admin");
     } catch (error) {
+      console.error("Login error:", error.response || error.message); // Debugging line
       setError("Invalid email or password");
     }
   };

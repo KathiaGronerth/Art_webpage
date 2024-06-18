@@ -183,8 +183,16 @@ const AdminPage = () => {
 
   const handleEnvSubmit = async (e) => {
     e.preventDefault();
+    const token = localStorage.getItem("authToken");
+    console.log("Token:", token);
+
     try {
-      await axios.post("/api/mails", envData);
+      await axios.post("/api/mails", envData, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`, // Include the token in the header
+        },
+      });
       setEnvData({ email: "", password: "" });
     } catch (error) {
       console.error("Error updating environment variables:", error);

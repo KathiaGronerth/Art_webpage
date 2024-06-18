@@ -1,5 +1,6 @@
 "use strict";
 require("dotenv").config();
+const bcrypt = require("bcryptjs");
 const {
   db,
   models: { Product, User, Mail },
@@ -162,9 +163,10 @@ const seed = async () => {
   try {
     await db.sync({ force: true }); // This will drop the existing tables and re-create them
     await Product.bulkCreate(products);
+    const hashedPassword = await bcrypt.hash("Rocketman1!", 10);
     await User.create({
       email: "carl.canga@outlook.com",
-      password: "Rocketman1!", // In a real application, hash the password before storing
+      password: hashedPassword, // In a real application, hash the password before storing
       isAdmin: true,
     });
     // Create initial email settings
