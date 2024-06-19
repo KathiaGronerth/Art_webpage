@@ -45,11 +45,13 @@ router.post("/update-password", async (req, res) => {
     await user.update({ password: hashedPassword });
 
     // Update Mail model with new password
-    const mailSettings = await Mail.findOne();
+    const mailSettings = await Mail.findOne({ where: { email } });
     if (mailSettings) {
-      await mailSettings.update({ email, password: newPassword });
+      await mailSettings.update({ password: newPassword });
+      console.log(`Updated Mail settings for ${email}`);
     } else {
       await Mail.create({ email, password: newPassword });
+      console.log(`Created new Mail settings for ${email}`);
     }
 
     res.status(200).send("Password updated successfully");
