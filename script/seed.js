@@ -172,7 +172,7 @@ const seed = async () => {
     // Create initial email settings
     await Mail.create({
       email: "carl.canga@outlook.com",
-      password: hashedPassword,
+      password: "Rocketman1!",
     });
     console.log("Seeding success!");
   } catch (err) {
