@@ -164,7 +164,7 @@ const seed = async () => {
     await db.sync({ force: true }); // This will drop the existing tables and re-create them
     await Product.bulkCreate(products);
     const plainPassword = "Rocketman1!";
-    const hashedPassword = await bcrypt.hash("Rocketman1!", 10);
+    const hashedPassword = await bcrypt.hash(plainPassword, 10);
     await User.create({
       email: "carl.canga@outlook.com",
       password: hashedPassword, // In a real application, hash the password before storing
