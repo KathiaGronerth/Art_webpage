@@ -2,18 +2,18 @@ const express = require("express");
 const router = express.Router();
 const nodemailer = require("nodemailer");
 const { models } = require("../db/models");
-const { User } = models;
+const { Mail } = models;
 
 router.post("/", async (req, res, next) => {
   const { name, email, phone, comments } = req.body;
 
   try {
-    const settings = await User.findOne();
+    const settings = await Mail.findOne();
     if (!settings) {
       return res.status(500).send("Email settings not configured");
     }
 
-    console.log("Email Setting:", settings.email, settings.password);
+    console.log("Email Settings:", settings.email, settings.password);
 
     const transporter = nodemailer.createTransport({
       host: "smtp-mail.outlook.com",

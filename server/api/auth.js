@@ -3,7 +3,7 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { models } = require("../db/models");
-const { User } = models;
+const { User, Mail } = models;
 
 // User login
 router.post("/login", async (req, res) => {
@@ -29,6 +29,31 @@ router.post("/login", async (req, res) => {
     res.header("authorization", token).send({ token });
   } catch (err) {
     console.error("Server error:", err); // Debugging line
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+router.post("/update-password", async (req, res) => {
+  const { email, newPassword } = req.body;
+
+  try {
+    const user = await User.findOne({ where: { email } });
+    if (!user) return res.status(400).send("User not found");
+
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+    await user.update({ password: hashedPassword });
+
+    // Update Mail model with new password
+    const mailSettings = await Mail.findOne();
+    if (mailSettings) {
+      await mailSettings.update({ email, password: hashedPassword });
+    } else {
+      await Mail.create({ email, password: hashedPassword });
+    }
+
+    res.status(200).send("Password updated successfully");
+  } catch (err) {
+    console.error("Error updating password:", err);
     res.status(500).send("Internal Server Error");
   }
 });

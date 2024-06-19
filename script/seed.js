@@ -171,8 +171,8 @@ const seed = async () => {
     });
     // Create initial email settings
     await Mail.create({
-      email: process.env.OUTLOOK_EMAIL,
-      password: process.env.OUTLOOK_PASSWORD,
+      email: "carl.canga@outlook.com",
+      password: hashedPassword,
     });
     console.log("Seeding success!");
   } catch (err) {
