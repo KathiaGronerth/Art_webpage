@@ -171,14 +171,14 @@ const seed = async () => {
     });
     // Create initial email settings
     await Mail.create({
-      email: "carl.canga@outlook.com",
-      password: "Rocketman1!",
+      email: process.env.OUTLOOK_EMAIL,
+      password: process.env.OUTLOOK_PASSWORD,
     });
     console.log("Seeding success!");
   } catch (err) {
     console.error("Seeding error:", err);
   } finally {
-    if (process.env.NODE_ENV !== "production") {
+    if (process.env.NODE_ENV === "development") {
       await db.close(); // Only close the connection in non -production
     }
   }
