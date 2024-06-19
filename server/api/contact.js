@@ -36,14 +36,13 @@ router.post("/", async (req, res, next) => {
     await transporter.sendMail(mailOptions);
     res.status(200).send("Email sent successfully");
   } catch (error) {
+    console.error("Error sending email:", error.message);
     if (error.response && error.response.status === 535) {
-      console.error("Authentication Error:", error.response.data);
       res
         .status(500)
         .send("Authentication Error: Check your email credentials");
     } else {
-      console.error("Error sending email:", error);
-      res.status(500).send("Error sending email");
+      res.status(500).send("Error sending email: " + error.message);
     }
     next(error);
   }

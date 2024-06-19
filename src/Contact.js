@@ -16,21 +16,38 @@ const Contact = () => {
     });
   };
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   // Clear the form data immediately upon submission
+  //   setFormData({
+  //     name: "",
+  //     email: "",
+  //     phone: "",
+  //     comments: "",
+  //   });
+
+  //   try {
+  //     const response = await axios.post("/api/contact", formData);
+  //     console.log("Email sent:", response.data);
+  //   } catch (error) {
+  //     console.error("Error sending email:", error);
+  //   }
+  // };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Clear the form data immediately upon submission
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      comments: "",
-    });
-
     try {
       const response = await axios.post("/api/contact", formData);
       console.log("Email sent:", response.data);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        comments: "",
+      });
     } catch (error) {
-      console.error("Error sending email:", error);
+      console.error("Error sending email:", error.response || error.message);
+      alert("Failed to send email: " + (error.response?.data || error.message));
     }
   };
 
