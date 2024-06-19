@@ -29,14 +29,26 @@ router.post("/", async (req, res, next) => {
 
     console.log("Email Settings:", settings.email, settings.password);
 
-    const transporter = nodemailer.createTransport({
-      host: "smtp-mail.outlook.com",
+    // const transporter = nodemailer.createTransport({
+    //   host: "smtp-mail.outlook.com",
+    //   port: 587,
+    //   secure: false, // Use TLS
+    //   auth: {
+    //     user: settings.email,
+    //     pass: settings.password,
+    //   },
+    // });
+
+    let transporter = nodemailer.createTransport({
+      host: "smtp.office365.com",
       port: 587,
-      secure: false, // Use TLS
+      secure: false,
       auth: {
-        user: settings.email,
-        pass: settings.password,
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASSWORD,
       },
+      logger: true, // Add this line
+      debug: true, // Add this line
     });
 
     const mailOptions = {
