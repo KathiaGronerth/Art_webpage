@@ -10,7 +10,6 @@ router.post("/", async (req, res, next) => {
   try {
     const settings = await User.findOne();
     if (!settings) {
-      console.error("Email settings not configured");
       return res.status(500).send("Email settings not configured");
     }
 
