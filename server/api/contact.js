@@ -13,7 +13,7 @@ router.post("/", async (req, res, next) => {
       return res.status(500).send("Email settings not configured");
     }
 
-    console.log("Email Settings:", settings.email, settings.password);
+    console.log("Email Setting:", settings.email, settings.password);
 
     const transporter = nodemailer.createTransport({
       host: "smtp-mail.outlook.com",

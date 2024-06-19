@@ -178,7 +178,7 @@ const seed = async () => {
   } catch (err) {
     console.error("Seeding error:", err);
   } finally {
-    if (process.env.NODE_ENV === "production") {
+    if (process.env.NODE_ENV !== "production") {
       await db.close(); // Only close the connection in non -production
     }
   }
