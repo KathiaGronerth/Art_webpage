@@ -9,6 +9,7 @@ const LoginPage = ({ setIsAuthenticated }) => {
   // const [isRegistering, setIsRegistering] = useState(false);
   const [isUpdatingPassword, setIsUpdatingPassword] = useState(false);
   const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -137,6 +138,14 @@ const LoginPage = ({ setIsAuthenticated }) => {
             value={newPassword}
             onChange={(e) => setNewPassword(e.target.value)}
             placeholder="New Password"
+            required
+          />
+          <input
+            type="password"
+            name="confirmPassword"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            placeholder="Confirm New Password"
             required
           />
           <button type="submit">Update Password</button>
