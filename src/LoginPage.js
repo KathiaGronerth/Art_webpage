@@ -48,8 +48,23 @@ const LoginPage = ({ setIsAuthenticated }) => {
   //   }
   // };
 
+  // const handleUpdatePassword = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     await axios.post("/api/auth/update-password", { email, newPassword });
+  //     setError("Password updated successfully.");
+  //     setIsUpdatingPassword(false);
+  //   } catch (error) {
+  //     setError("Password update failed");
+  //   }
+  // };
+
   const handleUpdatePassword = async (e) => {
     e.preventDefault();
+    if (newPassword !== confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    }
     try {
       await axios.post("/api/auth/update-password", { email, newPassword });
       setError("Password updated successfully.");

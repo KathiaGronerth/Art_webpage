@@ -4,19 +4,19 @@ const nodemailer = require("nodemailer");
 const { models } = require("../db/models");
 const { Mail } = models;
 
-router.get("/", async (req, res, next) => {
-  try {
-    const settings = await Mail.findOne();
-    if (settings) {
-      console.log("Email settings:", settings);
-      res.status(200).json(settings);
-    } else {
-      res.status(404).send("Email settings not found");
-    }
-  } catch (error) {
-    next(error);
-  }
-});
+// router.get("/", async (req, res, next) => {
+//   try {
+//     const settings = await Mail.findOne();
+//     if (settings) {
+//       console.log("Email settings:", settings);
+//       res.status(200).json(settings);
+//     } else {
+//       res.status(404).send("Email settings not found");
+//     }
+//   } catch (error) {
+//     next(error);
+//   }
+// });
 
 router.post("/", async (req, res, next) => {
   const { name, email, phone, comments } = req.body;
@@ -28,16 +28,6 @@ router.post("/", async (req, res, next) => {
     }
 
     console.log("Email Settings:", settings.email, settings.password);
-
-    // const transporter = nodemailer.createTransport({
-    //   host: "smtp-mail.outlook.com",
-    //   port: 587,
-    //   secure: false, // Use TLS
-    //   auth: {
-    //     user: settings.email,
-    //     pass: settings.password,
-    //   },
-    // });
 
     let transporter = nodemailer.createTransport({
       host: "smtp.office365.com",
