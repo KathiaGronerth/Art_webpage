@@ -44,8 +44,8 @@ router.post("/", async (req, res, next) => {
       port: 587,
       secure: false,
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASSWORD,
+        user: process.env.OUTLOOK_EMAIL,
+        pass: process.env.OUTLOOK_PASSWORD,
       },
       logger: true, // Add this line
       debug: true, // Add this line
