@@ -163,6 +163,7 @@ const seed = async () => {
   try {
     await db.sync({ force: true }); // This will drop the existing tables and re-create them
     await Product.bulkCreate(products);
+    const plainPassword = "Rocketman1!";
     const hashedPassword = await bcrypt.hash("Rocketman1!", 10);
     await User.create({
       email: "carl.canga@outlook.com",
@@ -172,7 +173,7 @@ const seed = async () => {
     // Create initial email settings
     await Mail.create({
       email: "carl.canga@outlook.com",
-      password: "Rocketman1!",
+      password: plainPassword,
     });
     console.log("Seeding success!");
   } catch (err) {
