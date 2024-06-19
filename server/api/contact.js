@@ -47,12 +47,10 @@ router.post("/", async (req, res, next) => {
         user: process.env.OUTLOOK_EMAIL,
         pass: process.env.OUTLOOK_PASSWORD,
       },
-      logger: true, // Add this line
-      debug: true, // Add this line
     });
 
     const mailOptions = {
-      from: settings.email,
+      from: process.env.OUTLOOK_EMAIL,
       to: settings.email,
       subject: "Contact Form Submission",
       text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nComments: ${comments}`,
