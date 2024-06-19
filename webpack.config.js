@@ -35,6 +35,9 @@ module.exports = {
       template: "./public/index.html", // Path to your HTML template
       filename: "index.html",
     }),
+    new CopyWebpackPlugin({
+      patterns: [{ from: "public/icons", to: "icons" }],
+    }),
   ],
   devServer: {
     static: {
