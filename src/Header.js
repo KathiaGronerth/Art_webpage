@@ -43,7 +43,9 @@ const Header = () => {
           isMobile ? "mobile" : ""
         }`}
       >
-        <img src={favicon} alt="Carl_Canga" />
+        {/* <img src={favicon} alt="Carl_Canga" /> */}
+        <img src={favicon} alt="Carl_Canga" width="152" height="130" />
+
         <nav>
           <ul>
             <li>

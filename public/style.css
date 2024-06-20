@@ -71,7 +71,7 @@ body {
 .header img {
   width: 152px;
   height: 130px;
-  margin-top: 40px;
+  /* margin-top: 40px; */
 }
 
 nav ul {
@@ -234,16 +234,23 @@ nav ul li a:hover {
 }
 
 .hero-text {
-  position: absolute;
+  /* position: absolute;
   bottom: 30px;
-  left: 15px; /* Add left positioning /
-  right: 15px; / Add right positioning for responsiveness /
-  z-index: 1; / Ensure it stays above the image */
+  left: 15px;
   background: rgba(255, 255, 255, 0.7);
   color: #362c1e;
   border-radius: 5px;
   padding: 20px;
+  right: 15px; */
+  position: absolute;
+  bottom: 30px;
+  left: 15px;
   right: 15px;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.7);
+  color: #362c1e;
+  border-radius: 5px;
+  padding: 20px;
 }
 
 .hero-text h1 {
@@ -261,9 +268,12 @@ nav ul li a:hover {
 }
 
 .carousel .slide img {
-  width: 100%;
+  /* width: 100%;
   max-height: 80vh;
-  object-fit: cover;
+  object-fit: cover; */
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9; /* Ensure aspect ratio */
 }
 
 .carousel-arrow {
@@ -278,7 +288,7 @@ nav ul li a:hover {
   z-index: 2;
 }
 
-.carousel-arrow-prev {
+/* .carousel-arrow-prev {
   left: 15px;
   color: white;
   transform: scale(1.1);
@@ -288,6 +298,25 @@ nav ul li a:hover {
   right: 15px;
   color: white;
   transform: scale(1.1);
+} */
+
+.carousel-arrow-prev,
+.carousel-arrow-next {
+  font-size: 2em;
+  color: white;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-arrow-prev {
+  left: 15px;
+}
+
+.carousel-arrow-next {
+  right: 15px;
 }
 
 .carousel-arrow {
@@ -303,6 +332,7 @@ nav ul li a:hover {
     margin-left: 0;
     margin-right: 0;
     padding: 10px;
+    margin-top: 20px;
   }
 
   .hero-text {
@@ -316,11 +346,11 @@ nav ul li a:hover {
   }
 
   .hero-text h1 {
-    font-size: 1.2em;
+    font-size: 10px;
   }
 
   .hero-text p {
-    font-size: 1em;
+    font-size: 9px;
   }
 
   .carousel-arrow {
@@ -340,14 +370,15 @@ nav ul li a:hover {
     left: 5px;
     right: 5px;
     padding: 10px;
+    margin-top: 20px;
   }
 
   .hero-text h1 {
-    font-size: 1em;
+    font-size: 10px;
   }
 
   .hero-text p {
-    font-size: 0.9em;
+    font-size: 9px;
   }
 
   .carousel-arrow {
