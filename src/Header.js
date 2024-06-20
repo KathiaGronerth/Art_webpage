@@ -23,17 +23,23 @@ const Header = () => {
   };
 
   return (
-    <div className="header">
+    <div>
       <div
         className={`menu-icon ${menuOpen ? "open" : ""}`}
         onClick={toggleMenu}
       >
-        <div className="bar"></div>
-        <div className="bar"></div>
-        <div className="bar"></div>
+        {menuOpen ? (
+          <div className="bar-close">X</div>
+        ) : (
+          <>
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
+          </>
+        )}
       </div>
       <div
-        className={`menu-content ${menuOpen ? "open" : ""} ${
+        className={`header ${menuOpen ? "open" : ""} ${
           isMobile ? "mobile" : ""
         }`}
       >
