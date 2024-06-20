@@ -24,8 +24,8 @@ body {
   height: 100%;
   position: fixed;
   background-color: #362c1e;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   overflow: scroll;
 }
 
@@ -75,8 +75,6 @@ body {
 }
 
 .header img {
-  /* width: 177px;
-  height: 152px; */
   width: 152px;
   height: 130px;
   margin-top: 40px;
@@ -127,9 +125,9 @@ nav ul li a:hover {
   width: 80px;
   z-index: 1;
   margin-top: 0px;
-  left: 100%; /* Position the dropdown to the right of the parent */
-  top: 0; /* Align the top of the dropdown with the parent */
-  transform: translateX(-10px); /* Adjust to move closer to the parent */
+  left: 100%;
+  top: 0;
+  transform: translateX(-10px);
 }
 
 .dropdown-content li {
