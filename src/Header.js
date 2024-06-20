@@ -1,9 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import favicon from "../public/favicon.jpg";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -19,7 +32,11 @@ const Header = () => {
         <div className="bar"></div>
         <div className="bar"></div>
       </div>
-      <div className={`menu-content ${menuOpen ? "open" : ""}`}>
+      <div
+        className={`menu-content ${menuOpen ? "open" : ""} ${
+          isMobile ? "mobile" : ""
+        }`}
+      >
         <img src={favicon} alt="Carl_Canga" />
         <nav>
           <ul>
