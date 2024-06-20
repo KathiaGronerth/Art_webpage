@@ -17,9 +17,7 @@ const Homepage = () => {
               onClick={onClickHandler}
               title={label}
               className="carousel-arrow carousel-arrow-prev"
-            >
-              &lt;
-            </button>
+            ></button>
           )
         }
         renderArrowNext={(onClickHandler, hasNext, label) =>
@@ -29,9 +27,7 @@ const Homepage = () => {
               onClick={onClickHandler}
               title={label}
               className="carousel-arrow carousel-arrow-next"
-            >
-              &gt;
-            </button>
+            ></button>
           )
         }
       >
