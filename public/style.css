@@ -294,6 +294,69 @@ nav ul li a:hover {
   color: #666;
 }
 
+/* Media Queries for responsiveness */
+
+@media (max-width: 768px) {
+  .main-content {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 10px;
+  }
+
+  .hero-text {
+    bottom: 20px;
+    left: 10px;
+    right: 10px;
+    padding: 15px;
+  }
+
+  .hero-text h1 {
+    font-size: 1.2em;
+  }
+
+  .hero-text p {
+    font-size: 1em;
+  }
+
+  .carousel-arrow {
+    font-size: 1.5em;
+  }
+
+  .carousel-arrow-prev,
+  .carousel-arrow-next {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text {
+    bottom: 15px;
+    left: 5px;
+    right: 5px;
+    padding: 10px;
+  }
+
+  .hero-text h1 {
+    font-size: 1em;
+  }
+
+  .hero-text p {
+    font-size: 0.9em;
+  }
+
+  .carousel-arrow {
+    font-size: 1.2em;
+  }
+
+  .carousel-arrow-prev,
+  .carousel-arrow-next {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
 /* About */
 
 .about {
