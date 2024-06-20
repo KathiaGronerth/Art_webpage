@@ -29,6 +29,47 @@ body {
   overflow: scroll;
 }
 
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.menu-icon .bar {
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  transition: all 0.3s;
+}
+
+.menu-icon.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-icon.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.menu-content {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-content.open {
+  display: flex;
+}
+
 .header img {
   /* width: 177px;
   height: 152px; */
