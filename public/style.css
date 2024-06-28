@@ -265,15 +265,21 @@ nav ul li a:hover {
 
 .carousel .slide {
   position: relative; /* Ensure this is set */
+  border: 2px solid rgba(255, 255, 255, 0.7); /* Add gray outline */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 1%;
 }
 
 .carousel .slide img {
-  /* width: 100%;
-  max-height: 80vh;
-  object-fit: cover; */
   width: 100%;
   height: auto;
-  aspect-ratio: 16/9; /* Ensure aspect ratio */
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain; /* Ensure the whole painting is visible without distortion */
+  outline: 2px solid rgba(255, 255, 255, 0.7); /* Optional: add gray outline to image */
 }
 
 .carousel-arrow {
@@ -417,6 +423,7 @@ nav ul li a:hover {
   flex-direction: row;
   margin: 20px;
   background: rgba(255, 255, 255, 0.7);
+  border-radius: 1%;
   /* flex-wrap: wrap; */
 }
 
@@ -867,6 +874,7 @@ html,
   padding: 25px;
   margin: 50px 100px 100px;
   align-items: center;
+  border-radius: 1%;
 }
 
 .contact-info {

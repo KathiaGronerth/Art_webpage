@@ -57,7 +57,7 @@ const Contact = () => {
       <div className="contact-square">
         <div className="contact-info">
           <p>Carl Canga Art</p>
-          <p>carl.canga@outlook.com</p>
+          <p>carl@carlcanga.com</p>
         </div>
         <form className="contact-form" onSubmit={handleSubmit}>
           <input

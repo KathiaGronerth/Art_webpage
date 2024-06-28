@@ -92,6 +92,22 @@ const Header = () => {
             <i className="fa fa-envelope"></i>
           </a>
         </div>
+        <div className="social-links">
+          <a
+            href="https://www.etsy.com/shop/CarlsPaintings"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-etsy"></i>
+          </a>
+          <a
+            href="https://carlcanga.blogspot.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fa-solid fa-blog"></i>
+          </a>
+        </div>
       </div>
     </div>
   );
