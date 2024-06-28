@@ -226,22 +226,10 @@ nav ul li a:hover {
 
 .carousel-wrapper {
   width: 100%;
-  position: relative; /* Add this line */
-}
-
-.carousel .carousel-status {
-  display: none;
+  position: relative;
 }
 
 .hero-text {
-  /* position: absolute;
-  bottom: 30px;
-  left: 15px;
-  background: rgba(255, 255, 255, 0.7);
-  color: #362c1e;
-  border-radius: 5px;
-  padding: 20px;
-  right: 15px; */
   position: absolute;
   bottom: 30px;
   left: 15px;
@@ -264,8 +252,8 @@ nav ul li a:hover {
 }
 
 .carousel .slide {
-  position: relative; /* Ensure this is set */
-  border: 2px solid rgba(255, 255, 255, 0.7); /* Add gray outline */
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -278,8 +266,8 @@ nav ul li a:hover {
   height: auto;
   max-width: 100%;
   max-height: 80vh;
-  object-fit: contain; /* Ensure the whole painting is visible without distortion */
-  outline: 2px solid rgba(255, 255, 255, 0.7); /* Optional: add gray outline to image */
+  object-fit: contain;
+  outline: 2px solid rgba(255, 255, 255, 0.7);
 }
 
 .carousel-arrow {
@@ -290,21 +278,9 @@ nav ul li a:hover {
   border: none;
   font-size: 2em;
   cursor: pointer;
-  /* color: #333; */
   z-index: 2;
+  color: #666;
 }
-
-/* .carousel-arrow-prev {
-  left: 15px;
-  color: white;
-  transform: scale(1.1);
-}
-
-.carousel-arrow-next {
-  right: 15px;
-  color: white;
-  transform: scale(1.1);
-} */
 
 .carousel-arrow-prev,
 .carousel-arrow-next {
@@ -325,9 +301,8 @@ nav ul li a:hover {
   right: 15px;
 }
 
-.carousel-arrow {
-  /* background: rgba(255, 255, 255, 0.7); */
-  color: #666;
+.carousel .carousel-status {
+  display: none;
 }
 
 /* Media Queries for responsiveness */
@@ -368,6 +343,16 @@ nav ul li a:hover {
     top: 50%;
     transform: translateY(-50%);
   }
+
+  /* Hide arrows and dots when the header is above the carousel */
+  .carousel-arrow,
+  .carousel .carousel-status {
+    display: none;
+  }
+
+  .carousel .control-dots {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {
@@ -395,6 +380,26 @@ nav ul li a:hover {
   .carousel-arrow-next {
     top: 50%;
     transform: translateY(-50%);
+  }
+
+  /* Hide arrows and dots when the header is above the carousel */
+  .carousel-arrow,
+  .carousel .carousel-status {
+    display: none;
+  }
+
+  .carousel .control-dots {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .carousel-arrow {
+    display: block;
+  }
+
+  .carousel .carousel-status {
+    display: none;
   }
 }
 
