@@ -19,7 +19,7 @@ const Product = db.define("product", {
   subcategory: {
     type: Sequelize.STRING,
     allowNull: false,
-    defaultValue: "Airplanes",
+    defaultValue: "Vehicles",
   },
   imageUrl: { type: Sequelize.STRING, defaultValue: "jpg" },
 });

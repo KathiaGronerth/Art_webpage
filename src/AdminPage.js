@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const subcategories = ["Faces", "Outdoors", "Airplanes"]; // Define subcategories
+const subcategories = ["Faces", "Outdoors", "Vehicles"]; // Define subcategories
 
 const AdminPage = () => {
   const [products, setProducts] = useState([]);

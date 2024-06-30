@@ -33,7 +33,7 @@ const Homepage = () => {
       >
         <div style={{ position: "relative" }}>
           <img
-            src="/arts/airplanes/airplanes1.jpg"
+            src="/arts/vehicles/vehicles1.jpg"
             alt="Slide 1"
             width="1920"
             height="1080"
@@ -49,7 +49,7 @@ const Homepage = () => {
         </div>
         <div style={{ position: "relative" }}>
           <img
-            src="/arts/airplanes/airplanes2.jpg"
+            src="/arts/vehicles/vehicles2.jpg"
             alt="Slide 2"
             width="1920"
             height="1080"
@@ -64,7 +64,7 @@ const Homepage = () => {
         </div>
         <div style={{ position: "relative" }}>
           <img
-            src="/arts/airplanes/airplanes3.jpg"
+            src="/arts/vehicles/vehicles3.jpg"
             alt="Slide 3"
             width="1920"
             height="1080"

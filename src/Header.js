@@ -58,7 +58,7 @@ const Header = () => {
               <a href="#works">Works</a>
               <ul className="dropdown-content">
                 <li>
-                  <Link to="/works/airplanes">Airplanes</Link>
+                  <Link to="/works/vehicles">Vehicles</Link>
                 </li>
                 <li>
                   <Link to="/works/outdoors">Outdoors</Link>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const Airplanes = () => {
+const Vehicles = () => {
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
 
@@ -10,7 +10,7 @@ const Airplanes = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get("/api/products", {
-          params: { subcategory: "Airplanes" },
+          params: { subcategory: "Vehicles" },
         });
         setProducts(response.data);
       } catch (error) {
@@ -27,7 +27,7 @@ const Airplanes = () => {
 
   return (
     <div className="container-category">
-      <p>Airplanes</p>
+      <p>Vehicles</p>
       <div className="works">
         {products.map((product) => (
           <div
@@ -49,4 +49,4 @@ const Airplanes = () => {
   );
 };
 
-export default Airplanes;
+export default Vehicles;

@@ -3,7 +3,7 @@ import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import Header from "./Header";
 import Homepage from "./Homepage";
 import About from "./About";
-import Airplanes from "./Airplanes";
+import Vehicles from "./Vehicles";
 import Outdoors from "./Outdoors";
 import Faces from "./Faces";
 import Painting from "./Painting";
@@ -30,7 +30,7 @@ const AppContent = () => {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/about" element={<About />} />
-          <Route path="/works/airplanes" element={<Airplanes />} />
+          <Route path="/works/vehicles" element={<Vehicles />} />
           <Route path="/works/outdoors" element={<Outdoors />} />
           <Route path="/works/faces" element={<Faces />} />
           <Route path="/painting/:id" element={<Painting />} />

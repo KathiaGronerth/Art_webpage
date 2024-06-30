@@ -12,31 +12,31 @@ const products = [
     technique: "Oil on Panel 12 x 12 Available",
     description:
       "Carl draws inspiration from industrial and historical artifacts, capturing the essence of maritime history through the depiction of a submarine sculpture.",
-    subcategory: "Airplanes",
-    imageUrl: "/arts/airplanes/airplanes1.jpg",
+    subcategory: "Vehicles",
+    imageUrl: "/arts/vehicles/vehicles1.jpg",
   },
   {
     title: "The Military Airplane",
     technique: "Oil on Panel 12 x 12 Available",
     description: "A comfortable and stylish outdoor chair",
-    subcategory: "Airplanes",
-    imageUrl: "/arts/airplanes/airplanes2.jpg",
+    subcategory: "Vehicles",
+    imageUrl: "/arts/vehicles/vehicles2.jpg",
   },
   {
     title: "Early 20th Century Biplane",
     technique: "Oil on Panel 12 x 12 Available",
     description:
       "Carl pays homage to the early pioneers of aviation with this painting of a brightly colored biplane.",
-    subcategory: "Airplanes",
-    imageUrl: "/arts/airplanes/airplanes3.jpg",
+    subcategory: "Vehicles",
+    imageUrl: "/arts/vehicles/vehicles3.jpg",
   },
   {
     title: "Early 20th Century Biplane",
     technique: "Oil on Panel 12 x 12 Available",
     description:
       "Carl pays homage to the early pioneers of aviation with this painting of a brightly colored biplane.",
-    subcategory: "Airplanes",
-    imageUrl: "/arts/airplanes/airplanes4.jpg",
+    subcategory: "Vehicles",
+    imageUrl: "/arts/vehicles/vehicles4.jpg",
   },
   {
     title: "Outdoors1",
