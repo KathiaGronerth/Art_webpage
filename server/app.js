@@ -2,11 +2,9 @@ require("dotenv").config();
 const express = require("express");
 const morgan = require("morgan");
 const path = require("path");
-const sslRedirect = require("heroku-ssl-redirect");
 const app = express();
 
 // Enable SSL redirect
-app.use(sslRedirect());
 module.exports = app;
 
 // logging middleware
