@@ -12976,7 +12976,7 @@
                           null,
                           n.createElement(
                             be,
-                            { to: "/works/airplanes" },
+                            { to: "/works/vehicles" },
                             "Vehicles"
                           )
                         ),
@@ -13114,7 +13114,7 @@
                 "div",
                 { style: { position: "relative" } },
                 n.createElement("img", {
-                  src: "/arts/airplanes/airplanes1.jpg",
+                  src: "/arts/vehicles/airplanes1.jpg",
                   alt: "Slide 1",
                   width: "1920",
                   height: "1080",
@@ -13134,7 +13134,7 @@
                 "div",
                 { style: { position: "relative" } },
                 n.createElement("img", {
-                  src: "/arts/airplanes/airplanes2.jpg",
+                  src: "/arts/vehicles/airplanes2.jpg",
                   alt: "Slide 2",
                   width: "1920",
                   height: "1080",
@@ -13154,7 +13154,7 @@
                 "div",
                 { style: { position: "relative" } },
                 n.createElement("img", {
-                  src: "/arts/airplanes/airplanes3.jpg",
+                  src: "/arts/vehicles/airplanes3.jpg",
                   alt: "Slide 3",
                   width: "1920",
                   height: "1080",
@@ -16388,7 +16388,7 @@
                   element: n.createElement(We, null),
                 }),
                 n.createElement(ue, {
-                  path: "/works/airplanes",
+                  path: "/works/vehicles",
                   element: n.createElement(Zn, null),
                 }),
                 n.createElement(ue, {
