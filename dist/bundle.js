@@ -13114,7 +13114,7 @@
                 "div",
                 { style: { position: "relative" } },
                 n.createElement("img", {
-                  src: "/arts/vehicles/airplanes1.jpg",
+                  src: "/arts/vehicles/vehicles1.jpg",
                   alt: "Slide 1",
                   width: "1920",
                   height: "1080",
@@ -13134,7 +13134,7 @@
                 "div",
                 { style: { position: "relative" } },
                 n.createElement("img", {
-                  src: "/arts/vehicles/airplanes2.jpg",
+                  src: "/arts/vehicles/vehicles2.jpg",
                   alt: "Slide 2",
                   width: "1920",
                   height: "1080",
@@ -13154,7 +13154,7 @@
                 "div",
                 { style: { position: "relative" } },
                 n.createElement("img", {
-                  src: "/arts/vehicles/airplanes3.jpg",
+                  src: "/arts/vehicles/vehicles3.jpg",
                   alt: "Slide 3",
                   width: "1920",
                   height: "1080",

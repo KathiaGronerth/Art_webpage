@@ -57,8 +57,8 @@ router.post("/", upload.single("file"), (req, res) => {
     const subcategory = req.body.subcategory.toLowerCase();
     let subcategoryPath;
     switch (subcategory) {
-      case "airplanes":
-        subcategoryPath = "airplanes";
+      case "vehicles":
+        subcategoryPath = "vehicles";
         break;
       case "faces":
         subcategoryPath = "faces";
