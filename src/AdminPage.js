@@ -200,6 +200,24 @@ const AdminPage = () => {
     }
   };
 
+  const handleDeleteProduct = async (productId) => {
+    try {
+      await axios.delete(`/api/products/${productId}`);
+      setProducts(products.filter((product) => product.id !== productId));
+      setSelectedProduct(null);
+      setEditForm({
+        title: "",
+        technique: "",
+        description: "",
+        subcategory: "",
+        imageUrl: "",
+      });
+      setEditPreview("");
+    } catch (error) {
+      console.error("Error deleting product:", error);
+    }
+  };
+
   return (
     <div className="admin-container">
       <h1>Admin Page</h1>
@@ -332,6 +350,12 @@ const AdminPage = () => {
             <img src={editPreview} alt="Preview" className="image-preview" />
           )}
           <button type="submit">Save Changes</button>
+          <button
+            type="button"
+            onClick={() => handleDeleteProduct(selectedProduct.id)}
+          >
+            Delete Painting
+          </button>
         </form>
       )}
 

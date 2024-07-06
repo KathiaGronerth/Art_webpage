@@ -48,4 +48,19 @@ router.put("/:id", async (req, res, next) => {
   }
 });
 
+// Deleting an existing product
+router.delete("/:id", async (req, res, next) => {
+  try {
+    const product = await Product.findByPk(req.params.id);
+    if (product) {
+      await product.destroy();
+      res.send(product);
+    } else {
+      res.status(404).send("Product not found");
+    }
+  } catch (error) {
+    next(error);
+  }
+});
+
 module.exports = router;
