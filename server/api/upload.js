@@ -14,7 +14,7 @@ const storage = multer.diskStorage({
 
     let subcategoryPath;
     switch (subcategory.toLowerCase()) {
-      case "airplanes":
+      case "vehicles":
         subcategoryPath = "airplanes";
         break;
       case "faces":
