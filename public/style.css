@@ -846,23 +846,24 @@ html,
     top: 2px;
     right: 2px;
     margin-top: 20px;
-    font-size: 14px;
+    font-size: 20px;
   }
 
   .header-controls .painting-index {
     top: 2px;
-    font-size: 14px;
+    font-size: 20px;
     margin-top: 20px;
   }
 
   .painting-navigation .nav-left,
   .painting-navigation .nav-right {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .painting-image {
     max-width: 100%;
     max-height: 60%;
+    margin-top: 70px;
   }
 
   .painting-details p {
