@@ -7,7 +7,8 @@ body {
 }
 
 .container {
-  margin-top: 60px;
+  /* margin-top: 60px; */
+  margin-top: 30px;
   display: flex;
   /* flex-wrap: row; */
   flex-direction: wrap;
@@ -213,15 +214,16 @@ nav ul li a:hover {
 }
 
 /* Homepage */
-
 .Homepage_header {
   text-align: center;
-  margin: 5px 0;
+  margin-top: 0px;
+  margin-bottom: 20px;
 }
 
 .Homepage_header p {
-  font-size: 2.5em;
+  font-size: 2em;
   color: white;
+  margin: 0px;
 }
 
 .main-content {
@@ -233,9 +235,11 @@ nav ul li a:hover {
   margin-left: 300px;
   margin-right: 50px;
   flex-direction: column;
+  top: 0px;
 }
 
 .carousel-wrapper {
+  margin: 20px;
   width: 100%;
   position: relative;
 }
@@ -841,11 +845,14 @@ html,
   .header-controls .zoom-controls {
     top: 2px;
     right: 2px;
+    margin-top: 20px;
+    font-size: 14px;
   }
 
   .header-controls .painting-index {
     top: 2px;
-    font-size: 10px;
+    font-size: 14px;
+    margin-top: 20px;
   }
 
   .painting-navigation .nav-left,
@@ -859,7 +866,8 @@ html,
   }
 
   .painting-details p {
-    font-size: 8px;
+    font-size: 14px;
+    margin-bottom: 40px;
   }
 }
 
