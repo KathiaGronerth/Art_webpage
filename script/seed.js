@@ -39,6 +39,13 @@ const products = [
     imageUrl: "/arts/vehicles/vehicles4.jpg",
   },
   {
+    title: "Roll Out ",
+    technique: "Oil on canval 8 x 10",
+    description: "Moving the triplane to the flight line.",
+    subcategory: "Vehicles",
+    imageUrl: "/arts/vehicles/vehicles5.jpg",
+  },
+  {
     title: "Outdoors1",
     technique: "Oil on Panel 12 x 12 Available",
     description: "A replica of a classic biplane",

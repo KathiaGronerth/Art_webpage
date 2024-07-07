@@ -5,6 +5,9 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 const Homepage = () => {
   return (
     <div className="main-content">
+      <div className="Homepage_header">
+        <p>Carl Canga Art</p>
+      </div>
       <Carousel
         showThumbs={false}
         infiniteLoop={true}

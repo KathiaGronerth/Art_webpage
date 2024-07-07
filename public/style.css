@@ -214,6 +214,16 @@ nav ul li a:hover {
 
 /* Homepage */
 
+.Homepage_header {
+  text-align: center;
+  margin: 5px 0;
+}
+
+.Homepage_header p {
+  font-size: 2.5em;
+  color: white;
+}
+
 .main-content {
   width: 80%;
   display: flex;
@@ -222,6 +232,7 @@ nav ul li a:hover {
   padding: 20px;
   margin-left: 300px;
   margin-right: 50px;
+  flex-direction: column;
 }
 
 .carousel-wrapper {
