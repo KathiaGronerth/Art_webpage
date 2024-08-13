@@ -32,10 +32,10 @@ const products = [
     imageUrl: "/arts/vehicles/vehicles3.jpg",
   },
   {
-    title: "Early 20th Century Biplane",
-    technique: "Oil on Panel 12 x 12 Available",
+    title: "Scratch one wildcat",
+    technique: "Oil on Panel 10 x 10",
     description:
-      "Carl pays homage to the early pioneers of aviation with this painting of a brightly colored biplane.",
+      "Created from researching dozens of photographs in the Naval archives.  Meant to suggest the battle of the Coral Sea as it was the last time the national insignia painted on the planes had the color red.",
     subcategory: "Vehicles",
     imageUrl: "/arts/vehicles/vehicles4.jpg",
   },
